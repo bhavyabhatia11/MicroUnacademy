@@ -1,0 +1,83 @@
+
+
+Pre-reads - super important
+
+==========================
+
+
+user  -----> Unacademy ---> 
+
+1. Web -- React (Next JS)
+2. Android App -- Native Android --- React Native
+3. iOS App -- Swift
+
+Frontend - Simpler, but SUPER EFFICIENT
+
+Performance ---> scrolling, heat issues, performance, compression
+
+=====================
+
+Database
+
+ - Relational DB - MySQL
+ - Non-realtional DB - ElasticSearch, Redis
+
+Redis - MySQl == 1: 5000
+
+Redis is EXPENSIVEEEEEEEEEEE!
+
+==========
+
+API Servers
+
+Frontend ------> API --------> Database
+  JS       Python - Django       MySQL
+
+3-tier Architecture
+
+Process 1: Get the course details
+ - Frotnend would make the API call
+ - API server would get the request
+ - API server makes the DB call
+ - API server responds the course detail
+
+
+==========
+
+Chat:
+
+Frontend ->  API -> DB
+
+ - User sending chat
+ - API request
+ - API Server firing a SQL query and storing it in DB
+
+ASYNC
+
+Frontend makes an API call
+API puts it in a Queue (Message Broker)
+Consumer consumes these messages
+Consumer updates the database
+
+Queue / Message Broker -> RabbitMQ, AWS SQS, Kafka
+
+Process 1: Django -> Serving REST API
+ - accept the request - chat message, like a post
+ - put the chat message in broker - Rabbit MQ
+ - return "saved"
+
+Process 2: Worker / Consumer
+ - read the messages from broker
+ - insert in the database - SLOWLY
+
+
+=========
+
+TODO:
+
+ - read the pre-reads
+ - setup a local Django hello world API
+ - setup MySQL 8 server locally
+ - setup RabbitMQ locally
+ - play around with DB and RabbitMQ
+ - STRETCH: go through the documentation
